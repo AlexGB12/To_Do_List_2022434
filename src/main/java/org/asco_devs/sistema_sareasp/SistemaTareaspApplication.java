@@ -83,9 +83,9 @@ public class SistemaTareaspApplication implements CommandLineRunner{
 				var codigo = Integer.parseInt(consola.nextLine());
 				Tareas tareas = TareaService.buscarTareas(codigo);
 				if (tareas != null) {
-					logger.info("Cliente encontrado: " + tareas + salto);
+					logger.info("Tarea encontrado: " + tareas + salto);
 				} else {
-					logger.info("Cliente no encontrado" + tareas + salto);
+					logger.info("Tarea no encontrado" + tareas + salto);
 				}
 			}
 			case 3 ->  {
@@ -97,13 +97,10 @@ public class SistemaTareaspApplication implements CommandLineRunner{
 				logger.info("Ingrese el estado de la tarea: ");
 				var estado = consola.nextLine();
 				var tareas = new Tareas();
-				tareas.setNombre(nombre);
-				tareas.setApellido(apellido);
-				tareas.setTelefono(telefono);
-				tareas.setCorreo(correo);
-				tareas.setGenero(genero);
-				tareas.setEdad(edad);
-				tareaService.guardarTarea(tareas);
+				tareas.setDescripcion(descripcion);
+				tareas.setEstado(estado);
+				tareas.setFechaLimite(fechaLimite);
+				tareaService.guardarTareas(tareas);
 				logger.info("Tarea agregada: " + tareas + salto);
 			}
 			case 4 -> {
@@ -111,7 +108,7 @@ public class SistemaTareaspApplication implements CommandLineRunner{
 				//buscar por codigo
 				logger.info("Agregue el codigo del cliente a modificar");
 				var codigo = Integer.parseInt(consola.nextLine());
-				Cliente cliente = clienteService.buscarCliente(codigo);
+				Tareas cliente = TareaService.buscarTareas(tareas);
 				//guardar si no es null
 				if (cliente != null) {
 					logger.info(salto+"***Agrega un cliente***"+salto);
