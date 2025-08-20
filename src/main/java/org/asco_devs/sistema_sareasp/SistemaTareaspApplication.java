@@ -98,11 +98,11 @@ public class SistemaTareaspApplication implements CommandLineRunner{
 				var estado = consola.nextLine();
 				var tareas = new Tareas();
 				tareas.setNombre(nombre);
-				cliente.setApellido(apellido);
-				cliente.setTelefono(telefono);
-				cliente.setCorreo(correo);
-				cliente.setGenero(genero);
-				cliente.setEdad(edad);
+				tareas.setApellido(apellido);
+				tareas.setTelefono(telefono);
+				tareas.setCorreo(correo);
+				tareas.setGenero(genero);
+				tareas.setEdad(edad);
 				tareaService.guardarTarea(tareas);
 				logger.info("Tarea agregada: " + tareas + salto);
 			}
