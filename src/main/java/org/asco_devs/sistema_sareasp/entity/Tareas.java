@@ -9,15 +9,12 @@ import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 
-
 @Entity(name = "Tareas")
-//lombok
-@Data//generar los setters y getters
-@NoArgsConstructor//el constructor vacio
-@AllArgsConstructor//el constructor lleno
-@ToString//el metodo sobrecargado ToString
-@EqualsAndHashCode//el metodo para trabajar con hashCode - id interno para la clase
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class Tareas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,4 +24,3 @@ public class Tareas {
     private Date fechaLimite;
     private String estado;
 }
-
